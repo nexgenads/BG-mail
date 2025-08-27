@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mail Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7fb;
+    }
+
+    header {
+      background: linear-gradient(90deg, #0b5cff, #00c6ff);
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    main {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: #0b5cff;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 14px;
+    }
+
+    .card button {
+      margin-top: 12px;
+      padding: 10px 16px;
+      background: #0b5cff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .card button:hover {
+      background: #0948c9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    Mail Dashboard
+  </header>
+
+  <main id="mail-container">
+    <!-- Cards will be injected here -->
+  </main>
+
+  <script>
+    // তোমার ১৫টা মেইল লিংক এখানে দাও
+    const mails = [
+      { label: 'Mail 1', url: '1.html' },
+      { label: 'Mail 2', url: '2.html' },
+      { label: 'Mail 3', url: '3.html' },
+      { label: 'Mail 4', url: '4.html' },
+      { label: 'Mail 5', url: '5.html' },
+      { label: 'Mail 6', url: '6.html' },
+      { label: 'Mail 7', url: '7.html' },
+      { label: 'Mail 8', url: '8.html' },
+      { label: 'Mail 9', url: '9.html' },
+      { label: 'Mail 10', url: '10.html' },
+      { label: 'Mail 11', url: '11.html' },
+      { label: 'Mail 12', url: '12.html' },
+      { label: 'Mail 13', url: '13.html' },
+      { label: 'Mail 14', url: '14.html' },
+      { label: 'Mail 15', url: '15.html' }
+    ];
+
+    const container = document.getElementById('mail-container');
+
+    mails.forEach(mail => {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <h3>${mail.label}</h3>
+        <p>Click below to open ${mail.label} in a new tab.</p>
+        <button onclick="window.open('${mail.url}', '_blank')">Open</button>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>
